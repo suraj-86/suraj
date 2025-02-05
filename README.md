@@ -1,3 +1,3 @@
 # suraj
-this is my first Git repository.<br>
-author - Suraj Kumar
+this is my first Git Repository.<br>
+Author - Suraj Kumar
