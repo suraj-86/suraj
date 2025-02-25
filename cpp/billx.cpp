@@ -1,6 +1,5 @@
 //bill for several products
 
-
 #include<iostream>
 using namespace std;
 
@@ -19,7 +18,7 @@ class product{
             cin >>name;
             cout << "Enter price: ";
             cin >> price;
-            cout << "Enter auantity: ";
+            cout << "Enter quantity: ";
             cin >> quantity;
         }
         void bill_print() {            
