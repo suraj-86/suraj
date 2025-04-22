@@ -87,7 +87,7 @@
   
   /* Train Animation */
   .train-animation {
-    animation: moveTrain 10s linear infinite;
+    /*animation: moveTrain 10s linear infinite;*/
     margin: 2rem auto;
     max-width: 300px;
   }
@@ -116,7 +116,140 @@
     animation: pulse 2s infinite;
     transition: transform 0.3s ease;
   }
-  
+  /* style.css */
+
+.schedule-box {
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.schedule-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    padding-left: 20px;
+    border-left: 4px solid #007bff; /* Left border with color */
+    transition: all 0.3s ease;
+}
+
+.schedule-box p:hover {
+    background-color: #e0f7fa; /* Light blue on hover */
+    cursor: pointer;
+    transform: translateX(5px); /* Slight move effect on hover */
+}
+
+.schedule-box p strong {
+    color: #007bff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.schedule-box p span {
+    font-style: italic;
+    color: #555;
+    font-size: 16px;
+}
+
+.schedule-box p:first-child {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+/* style.css */
+
+/* Form container styling */
+.form-box {
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    margin: 60px auto;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-box:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); /* More shadow on hover */
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+/* Input field styling */
+.form-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fafafa;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Input focus effect */
+.form-box input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* Input placeholder styling */
+.form-box input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Button styling */
+.form-box button {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-box button:hover {
+    background: linear-gradient(145deg, #0056b3, #007bff);
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.form-box button:focus {
+    outline: none;
+}
+
+/* Input hover effect */
+.form-box input:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+}
+
+/* Add smooth transitions for form elements */
+.form-box input, .form-box button {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-box input:focus, .form-box button:focus {
+    outline: none;
+}
+
+/* Make the form feel interactive and stylish */
+.form-box input:focus, .form-box button:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
   .cta-button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px #00ffc8;

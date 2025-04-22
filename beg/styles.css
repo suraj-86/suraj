@@ -1,0 +1,216 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #f4f4f9, #e0e7ff);
+  color: #333;
+}
+
+/* Navigation Bar */
+nav {
+  background: linear-gradient(to right, #2c3e50, #4b79a1);
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(
+      rgba(44, 62, 80, 0.7),
+      rgba(44, 62, 80, 0.7)
+    ),
+    url('hero-image.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  margin-bottom: 40px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero:hover {
+  transform: scale(1.01);
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #f0f0f0;
+}
+
+/* Section styling */
+section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  background: linear-gradient(145deg, #ffffff, #f0f4ff);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-left: 5px solid #4b79a1;
+  padding-left: 15px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Image placeholders */
+.image-placeholder {
+  width: 100%;
+  height: 300px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ccc,
+    #ccc 10px,
+    #ddd 10px,
+    #ddd 20px
+  );
+  margin: 30px 0;
+  text-align: center;
+  line-height: 300px;
+  color: #555;
+  font-size: 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.image-placeholder:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-placeholder p {
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to right, #2c3e50, #4b79a1);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .image-placeholder {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
