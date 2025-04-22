@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Railway Booking System</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
     <header>
-        <h1>Railway Booking System</h1>
+        <div class="welcome-box typewriter">
+            <h2>Welcome to the Railway Booking System</h2>
+        </div>
         <nav>
             <a href="register.html">Register</a>
             <a href="login.html">Login</a>
@@ -17,8 +27,26 @@
             <a href="pnr.html">PNR Status</a>
         </nav>
     </header>
+
+    <!-- Main Content -->
     <main>
-        <h2>Welcome to the Railway Booking System</h2>
+        <h2>Experience the Fastest Ticket Booking</h2>
+
+        <!-- Animated Train -->
+        <div class="train-animation">
+            <img src="train.png" alt="Train Image">
+        </div>
+
+        <!-- Call to Action Button -->
+        <a href="booking.html" class="cta-button">Book Now</a>
     </main>
+
+    <!-- Particles Init -->
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function () {
+            console.log('Particles.js config loaded.');
+        });
+    </script>
+
 </body>
 </html>
