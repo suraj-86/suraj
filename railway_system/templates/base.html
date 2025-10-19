@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Suraj Rail Booking System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="sidebar-overlay"></div>
+
+    {% if session['username'] %}
+    <aside id="sidebar">
+        <div class="sidebar-profile">
+            <div class="profile-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div class="profile-info">
+                <span>Welcome,</span>
+                <strong>{{ session['username'] }}</strong>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            {% if session['is_admin'] %}
+            <a href="{{ url_for('admin_dashboard') }}">Admin Panel</a>
+            {% endif %}
+            <a href="{{ url_for('my_bookings') }}">My Bookings</a>
+            <a href="{{ url_for('profile') }}">Account Info</a>
+            <a href="{{ url_for('change_password') }}">Change Password</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </div>
+    </aside>
+    {% endif %}
+
+    <div class="container">
+        <header>
+            <h1>{% block header %}Welcome{% endblock %}</h1>
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('schedule') }}">Train Schedule</a>
+                <a href="{{ url_for('book_ticket') }}">Book Ticket</a>
+                <a href="{{ url_for('pnr_status') }}">PNR Status</a>
+                
+                {% if session['username'] %}
+                <button id="profile-toggle" class="profile-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </button>
+                {% else %}
+                <a href="{{ url_for('login') }}" class="login-nav-button">Login</a>
+                {% endif %}
+            </nav>
+            
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Suraj Rail Booking System.</p>
+        </footer>
+    </div>
+    
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            const profileToggle = document.getElementById('profile-toggle');
+            const overlay = document.getElementById('sidebar-overlay');
+            const body = document.body;
+            let hoverTimeout;
+
+            const openSidebar = () => {
+                clearTimeout(hoverTimeout);
+                body.classList.add('sidebar-open');
+            };
+
+            const closeSidebar = () => {
+                if (!body.classList.contains('sidebar-pinned')) {
+                    body.classList.remove('sidebar-open');
+                }
+            };
+
+            profileToggle.addEventListener('mouseenter', openSidebar);
+            profileToggle.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(closeSidebar, 300);
+            });
+            sidebar.addEventListener('mouseenter', openSidebar);
+            sidebar.addEventListener('mouseleave', () => {
+                hoverTimeout = setTimeout(closeSidebar, 300);
+            });
+
+            profileToggle.addEventListener('click', () => {
+                body.classList.toggle('sidebar-pinned');
+                if (body.classList.contains('sidebar-pinned')) {
+                    openSidebar();
+                }
+            });
+
+            overlay.addEventListener('click', () => {
+                body.classList.remove('sidebar-pinned', 'sidebar-open');
+            });
+        }
+    </script>
+</body>
+</html>
+
+

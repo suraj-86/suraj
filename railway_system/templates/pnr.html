@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}PNR Status - Railway System{% endblock %}
+{% block header %}PNR Status Inquiry{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('pnr_status') }}" method="POST" class="modern-form">
+    <h3>Check Your PNR Status</h3>
+    <div class="form-group">
+        <label for="pnr">Enter PNR Number</label>
+        <div class="input-with-icon">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <input type="text" id="pnr" name="pnr" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="cta-button">Check Status</button>
+    </div>
+</form>
+
+{% if status %}
+<div class="pnr-status-result">
+    {% if status.found %}
+        <h4>Status for PNR: {{ status.pnr }}</h4>
+        <p><strong>Passenger:</strong> {{ status.passenger_name }}</p>
+        <p><strong>Train:</strong> {{ status.train_name }}</p>
+        <p><strong>Status:</strong> Confirmed</p>
+    {% else %}
+        <h4>Status for PNR: {{ status.pnr }}</h4>
+        <p>PNR not found. Please check the number and try again.</p>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+
